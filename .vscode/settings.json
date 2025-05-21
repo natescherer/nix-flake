@@ -1,3 +1,15 @@
 {
-  "git.branchProtection": [""]
+  "git.branchProtection": [""],
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "options": {
+        "home-manager": {
+          "expr": "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.nixtools.options"
+        }
+      }
+    }
+  }
 }
